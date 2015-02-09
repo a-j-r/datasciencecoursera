@@ -1,12 +1,26 @@
 # run_analysis.R
 
-The script “run_analysis.R” accesses data from the “Human Activity Recognition Using Smartphones Data Set” repository (see http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones) and filters and aggregates this data. The following steps are executed:
+## Repository content
+* README.md: this file.
+* CodeBook: Study design and description of the variables.
+* run_analysis.R: R script to clean up and aggregate the original data.
+* res.txt: sample result of the run_analysis script.
+
+## run_analysis.R
+
+The script was developed and tested on Windows 7 machin with R Version 3.1.2.
+
+The source data set is collected by Reyes-Ortiz, Anguita, Ghio, and Oneto from the Smartlab Non Linear Complex Systems Laboratory in Genoa, Italy and represents data from accelerometers of the the Samsung Galaxy S 2 (see [1], [2]). The data set archive has been downloaded from [3]. 
+
+The following steps are executed:
 1.	The train and the test data sets are merged to one data set.
 2.	Only measurements on the mean and standard deviation for each measurement are retained. 
 3.	Descriptive activity names are used in the resulting data set
 4.	Appropriately label of the variables are used. 
 5.	From the data set in step 4, for each activity and subject the average of the measurement are computed and stored in a second tidy dataset.  
+Further details of the study design can be obtained in the cited web source.
 
+### Data processing steps
 In detail, the following steps are executed:
 "run_analysis.R" downloads the data form the specified download adress 
 ("https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip) into the “input” subfolder of the workspace,  unzipes the files and reads the needed data into R.
@@ -28,3 +42,12 @@ Finally the two data.frames are merged into a single data.frame (rbind).
 This data is stored in the X_complete data.frame. We have now a tidy set of raw data.
 
 To compute the mean of the raw data, we use the aggregate function applied to a formulae. The result of the aggregation is stored into the "res.txt"-file in the working directory.
+
+## References
+
+[1] Anguita, D., A. Ghio, L. Oneto, X. Parra and J. L. Reyes-Ortiz (2012): Human Activity Recognition on Smartphones using a Multiclass Hardware-Friendly Support Vector Machine. International Workshop of Ambient Assisted Living (IWAAL 2012). Vitoria-Gasteiz, Spain. Dec 2012
+
+[2] http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
+
+[3] https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
+
