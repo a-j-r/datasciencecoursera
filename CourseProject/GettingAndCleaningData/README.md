@@ -8,7 +8,7 @@
 
 ## run_analysis.R
 
-The script was developed and tested on Windows 7 machin with R Version 3.1.2.
+The script was developed and tested on Windows 7 with R Version 3.1.2.
 
 The source data set is collected by Reyes-Ortiz, Anguita, Ghio, and Oneto from the Smartlab Non Linear Complex Systems Laboratory in Genoa, Italy and represents data from accelerometers of the the Samsung Galaxy S 2 (see [1], [2]). The data set archive has been downloaded from [3]. 
 
